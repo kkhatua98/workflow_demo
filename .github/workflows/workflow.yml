@@ -1,0 +1,16 @@
+name: attempts
+
+on: push
+
+jobs:
+  
+  greeting_workflow:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - uses: actions/checkout@v2
+      
+      - name: printing branch name
+        run: echo ${GITHUB_REF##*/}
