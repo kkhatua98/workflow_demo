@@ -21,7 +21,7 @@ jobs:
          echo ${GITHUB_REF##*/}
      
       - name: conditional step
-        if: steps.changes.outputs.src == 'true'
+        if: steps.filter.outputs.src == 'true'
         run: echo "Codes in src folder changed."
          
 
