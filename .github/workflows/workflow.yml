@@ -23,5 +23,8 @@ jobs:
       - name: conditional step
         if: steps.filter.outputs.src == 'true'
         run: echo "Codes in src folder changed."
+      
+      - name: command git_diff
+        run: git diff
          
 
