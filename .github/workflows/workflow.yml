@@ -21,7 +21,7 @@ jobs:
          echo $GITHUB_REF
          echo ${GITHUB_REF##*/}
          reference_variable=${GITHUB_REF##*/}
-         echo reference_variable
+         echo $reference_variable
      
       - name: conditional step
         if: steps.filter.outputs.src == 'true'
