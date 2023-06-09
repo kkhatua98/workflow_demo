@@ -53,4 +53,3 @@ jobs:
       branch_name: ${{needs.print-variable.outputs.output1}}
 #       branch_name: env.input_branch_name
          
-
