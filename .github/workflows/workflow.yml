@@ -12,7 +12,7 @@ env:
 
 jobs:
   
-  greeting_workflow:
+  print-variable:
     
     runs-on: ubuntu-latest
     
@@ -35,7 +35,7 @@ jobs:
       - name: command git_diff
         run: git diff
 
-  call-workflow-passing-data:
+  call-reusable-workflow:
     uses: ./.github/workflows/called.yml
     with:
       branch_name: ${GITHUB_REF##*/}
