@@ -1,0 +1,27 @@
+name: called_workflow
+
+on: 
+  workflow_call:
+    inputs:
+      branch_name: 
+        required: true
+        type: string
+
+env:
+  DAY_OF_WEEK: Monday
+
+jobs:
+  
+  greeting_workflow:
+    
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+    
+      - uses: actions/checkout@v2
+      
+      - name: printing branch name
+        run: |
+         echo ${{ inputs.branch_name }}
+         echo $GITHUB_REF
