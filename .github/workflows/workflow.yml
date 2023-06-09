@@ -1,4 +1,4 @@
-name: attempts
+name: caller_workflow
 
 on: 
   workflow_dispatch:
