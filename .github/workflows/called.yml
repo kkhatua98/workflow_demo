@@ -19,9 +19,12 @@ jobs:
     
     steps:
     
-      - uses: actions/checkout@v2
+#       - uses: actions/checkout@v2
+      - uses: actions/labeler@v4
+        with:
+         branch_name: ${{ inputs.branch_name }}
       
       - name: printing branch name
         run: |
-         echo ${{ inputs.branch_name }}
+         echo $branch_name
          echo $GITHUB_REF
