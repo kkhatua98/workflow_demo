@@ -14,6 +14,10 @@ env:
 jobs:
   
   print-variable:
+  
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+#       output2: ${{ steps.step2.outputs.secondword }}
     
     runs-on: ubuntu-latest
     
@@ -21,6 +25,12 @@ jobs:
     steps:
     
       - uses: actions/checkout@v2
+      
+      - id: step1
+        run: echo "::set-output name=test::world"
+#       - id: step2
+#         run: echo "::set-output name=secondword::world"
+
       
       - name: printing branch name
         run: |
@@ -38,7 +48,9 @@ jobs:
 
   call-reusable-workflow:
     uses: kkhatua98/workflow_demo/.github/workflows/called.yml@check
+    needs: print-variable
     with:
-      branch_name: env.input_branch_name
+      branch_name: ${{needs.print-variable.outputs.output1}}
+#       branch_name: env.input_branch_name
          
 
