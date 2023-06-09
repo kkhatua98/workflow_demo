@@ -9,6 +9,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  input_branch_name: ${GITHUB_REF##*/}
 
 jobs:
   
@@ -38,6 +39,6 @@ jobs:
   call-reusable-workflow:
     uses: ./.github/workflows/called.yml
     with:
-      branch_name: ${GITHUB_REF##*/}
+      branch_name: env.input_branch_name
          
 
