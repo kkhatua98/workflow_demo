@@ -36,7 +36,7 @@ jobs:
         run: git diff
 
   call-workflow-passing-data:
-    uses: .github/workflows/called.yml@main
+    uses: ./.github/workflows/called.yml
     with:
       branch_name: ${GITHUB_REF##*/}
          
