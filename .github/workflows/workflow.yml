@@ -37,7 +37,7 @@ jobs:
         run: git diff
 
   call-reusable-workflow:
-    uses: kkhatua98/workflow_demo/.github/workflows/called.yml@main
+    uses: kkhatua98/workflow_demo/.github/workflows/called.yml@check
     with:
       branch_name: env.input_branch_name
          
