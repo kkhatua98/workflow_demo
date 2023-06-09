@@ -12,7 +12,7 @@ env:
 
 jobs:
   
-  greeting_workflow:
+  printing_passed_variables:
     
     runs-on: ubuntu-latest
     
