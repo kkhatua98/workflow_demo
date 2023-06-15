@@ -1,2 +1,3 @@
 This is a demo text file to test conditional step in GitHub Actions. Another line added.
 Another line added.
+Another new line added.
