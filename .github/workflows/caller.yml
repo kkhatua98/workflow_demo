@@ -47,6 +47,10 @@ jobs:
       
       - name: command git_diff
         run: git diff --name-only HEAD^..HEAD
+      
+      - name: printing branch name
+        run: |
+         echo $GITHUB_REF
 
   call-reusable-workflow:
     uses: kkhatua98/workflow_demo/.github/workflows/called.yml@check
