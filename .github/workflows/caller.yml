@@ -25,6 +25,8 @@ jobs:
     steps:
     
       - uses: actions/checkout@v2
+        with:
+         fetch-depth: 2
       
       - id: step1
         run: echo "::set-output name=test::${GITHUB_REF##*/}"
