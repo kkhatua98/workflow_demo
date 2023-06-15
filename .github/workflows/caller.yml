@@ -44,7 +44,7 @@ jobs:
         run: echo "Codes in src folder changed."
       
       - name: command git_diff
-        run: git diff
+        run: git diff --name-only HEAD HEAD~1
 
   call-reusable-workflow:
     uses: kkhatua98/workflow_demo/.github/workflows/called.yml@check
