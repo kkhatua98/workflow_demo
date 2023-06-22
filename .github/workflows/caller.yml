@@ -52,8 +52,8 @@ jobs:
         run: |
          echo $GITHUB_REF
          
-  run-workflow-from-another-folder:
-    uses: kkhatua98/workflow_demo/Folder/workflow.yml@check
+#   run-workflow-from-another-folder:
+#     uses: kkhatua98/workflow_demo/Folder/workflow.yml@check
     
   call-reusable-workflow:
     uses: kkhatua98/workflow_demo/.github/workflows/called.yml@check
