@@ -1,0 +1,33 @@
+name: caller_workflow
+
+on: 
+  workflow_dispatch:
+    inputs:
+      name: 
+        description: "Who to greet"
+        default: "A"
+
+env:
+  DAY_OF_WEEK: Monday
+  input_branch_name: ${GITHUB_REF##*/}
+
+jobs:
+  
+  print-variable:
+  
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+#       output2: ${{ steps.step2.outputs.secondword }}
+    
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+    
+      - uses: actions/checkout@v2
+        with:
+         fetch-depth: 2
+      
+      - name: printing branch name
+        run: |
+         echo $GITHUB_REF
