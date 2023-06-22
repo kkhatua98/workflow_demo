@@ -1,0 +1,21 @@
+name: called_workflow
+
+on: workflow_call
+
+
+
+jobs:
+  
+  print-variable:
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+    
+      - uses: actions/checkout@v2
+        with:
+         fetch-depth: 2
+      
+      - name: printing branch name
+        run: |
+         echo $GITHUB_REF
