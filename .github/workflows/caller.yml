@@ -51,9 +51,16 @@ jobs:
       - name: printing branch name
         run: |
          echo $GITHUB_REF
+     
+      - name: run workflow from another folder
+        working-directory: ./Folder
+        run: |
+          chmod +x workflow.sh
+          ./workflow.sh
          
 #   run-workflow-from-another-folder:
 #     uses: kkhatua98/workflow_demo/Folder/workflow.yml@check
+# The above is not working.
     
   call-reusable-workflow:
     uses: kkhatua98/workflow_demo/.github/workflows/called.yml@check
